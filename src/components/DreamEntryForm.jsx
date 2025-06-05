@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useContext } from 'react';
 import { DreamContext } from '../context/DreamContext';
 
 
