@@ -24,13 +24,16 @@ export const DreamProvider = ({ children }) => {
   const [dreams, dispatch] = useReducer(dreamReducer, initialState);
 
   // Sync to localStorage
-  useEffect(() => {
-    localStorage.setItem('dreams', JSON.stringify(dreams));
-  }, [dreams]);
-
-  return (
-    <DreamContext.Provider value={{ dreams, dispatch }}>
-      {children}
-    </DreamContext.Provider>
-  );
-};
+useEffect(() => {
+  try {
+    const data = JSON.stringify(dreams);
+    if (data.length < 5000000) { // less than 5MB
+      localStorage.setItem('dreams', data);
+    } else {
+      console.warn('Dreams too large to store');
+    }
+  } catch (error) {
+    console.error('Failed to save dreams:', error);
+  }
+}, [dreams]);
+}
