@@ -10,6 +10,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<NewDream />} />

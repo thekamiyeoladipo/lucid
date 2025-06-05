@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="p-4 text-white">🏠 Home Page</div>;
+  return <h2 style={{ color: "white" }}>Home Page Rendered</h2>;
 }
