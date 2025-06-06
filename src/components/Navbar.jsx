@@ -14,6 +14,10 @@ export default function Navbar() {
             Lucid
           </Link>
 
+         <Link to="/" className="text-white font-bold text-2xl">
+            Lucid
+          </Link>
+
           <div className="flex items-center md:hidden gap-2">
             {/* Always-visible mobile button */}
             <Link
